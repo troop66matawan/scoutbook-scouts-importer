@@ -1,0 +1,25 @@
+{
+  "name": "scoutbook-scouts-importer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10",
+    "line-reader": "^0.4.0",
+    "scoutbook-scout": "github:troop66matawan/scoutbook-scout#master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troop66matawan/scoutbook-scouts-importer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troop66matawan/scoutbook-scouts-importer/issues"
+  },
+  "homepage": "https://github.com/troop66matawan/scoutbook-scouts-importer#readme"
+}
