@@ -8,7 +8,7 @@ exports.scoutbook_scouts_importer = function (importPath) {
         })
         .fromFile(importPath)
         .then(function (importedData) {
-            let scouts = [];
+            let scouts = {};
             importedData.forEach(importedScout => {
                 const newScout = new Scout(
                     importedScout['BSA Member ID'],
@@ -49,7 +49,7 @@ exports.scoutbook_scouts_importer = function (importPath) {
                 newScout.oaVigilDate = importedScout['OA Vigil Date'];
                 newScout.oaActive = importedScout['OA Active'];
 
-                scouts.push(newScout);
+                scouts[newScout.id] = newScout;
             });
             return scouts;
             //console.log(json);
@@ -57,7 +57,7 @@ exports.scoutbook_scouts_importer = function (importPath) {
 };
 
 if (process.argv.length !== 3) {
-    console.log('Usage: ' + process.argv[1] + ' <scoutbook_advancement.csv file to import>');
+    console.log('Usage: ' + process.argv[1] + ' <scoutbook__scouts.csv file to import>');
 } else {
     exports.scoutbook_scouts_importer(process.argv[2])
         .then(function (scouts) {
